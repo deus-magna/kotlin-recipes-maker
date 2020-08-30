@@ -19,16 +19,29 @@ fun buildMenu():String {
 fun buildSelectedOptionMenu(selectedOption:String){
     when(selectedOption){
         "1" -> makeRecipe()
-        "2" -> showMoreRecipes()
+        "2" -> viewRecipe()
         "3" -> println("Programa terminado")
         else -> println("Opción no valida")
     }
 }
 
 fun makeRecipe(){
-    println("Hacer receta")
+    val menu = """Hacer receta
+    Selecciona por categoría el ingrediente que buscas
+    1. Agua
+    2. Leche
+    3. Carne
+    4. Verduras
+    5. Frutas
+    6. Cereal
+    7. Huevos
+    8. Aceites""".trimIndent()
+    println(menu)
+
+    val selectedOption:String = readLine() ?: "0"
+    println("Opción seleccionada $selectedOption")
 }
 
-fun showMoreRecipes(){
-    println("Ver más recetas")
+fun viewRecipe(){
+    println("Ver mis recetas")
 }
